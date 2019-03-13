@@ -4,7 +4,7 @@ ARG DOWNLOADURL=https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/downl
 
 RUN \
     mkdir C:\jre\ && \
-    curl -o C:\jre\jre.zip %DOWNLOADURL% && \
+    curl -o C:\jre\jre.zip -L %DOWNLOADURL% && \
     tar -C C:\jre\ --strip-components 1 -xf C:\jre\jre.zip && \
     del /f /q C:\jre\jre.zip
 
